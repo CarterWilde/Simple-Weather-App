@@ -32,7 +32,7 @@ function submitErrorNotification() {
 }
 
 function initWeatherData() {
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${Locaiton}&APPID=${APPID}&units=imperial`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Locaiton}&APPID=${APPID}&units=imperial`)
   .then((response) => {
     if(response.ok){
       return response.json();
