@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,500,400");
+*{
+  margin: 0px;
+  font-family: 'Montserrat';
+}
+html{
+  width: 100%;
+  height: 100%;
+  background: rgba(12,131,242,1);
+  background: -moz-linear-gradient(45deg, rgba(12,131,242,1) 0%, rgba(32,227,156,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(12,131,242,1)), color-stop(100%, rgba(32,227,156,1)));
+  background: -webkit-linear-gradient(45deg, rgba(12,131,242,1) 0%, rgba(32,227,156,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(12,131,242,1) 0%, rgba(32,227,156,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(12,131,242,1) 0%, rgba(32,227,156,1) 100%);
+  background: linear-gradient(45deg, rgba(12,131,242,1) 0%, rgba(32,227,156,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c83f2', endColorstr='#20e39c', GradientType=1 );
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#Input{
+  padding: 1%;
+  font-size: 2vw;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, .25);
+  padding: 3%;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, .75);
+}
+#Input::placeholder{
+  font-weight: 200;
+  color: #FFF;
+}
+#Input:focus{
+  outline: none;
+}
+#Input.Error{
+  border-bottom: 2px solid #F00;
+}
+.Error{
+  color: #FFF;
+  display: block !important;
+}
+.Hidden{
+  display: none !important;
+}
+#Error-Notification{
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.5vw;
+  background-color: #F00;
+  margin: 4% 0%;
+  display: none;
+}
+.key-value{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin: 1% 0%;
+}
+.aggregate{
+  font-weight: 200;
+  width: 100%;
+}
+.data{
+  text-align: right;
+}
+#WeatherData p span{
+  font-size: 1.25em;
+}
+.mph::after{
+  content: "MPH"
+}
+#WeatherData {
+  display: block;
+  width: 22%;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, .25);
+  padding: 2%;
+}
+#WeatherData #city{
+  font-size: 2.5em;
+  font-weight: 300;
+}
+#main{
+  font-size: 2em;
+}
+.text-center{
+  text-align: center;
+}

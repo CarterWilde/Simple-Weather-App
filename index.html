@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="master.css">
+    <script src="main.js" charset="utf-8"></script>
+  </head>
+  <body onload="init()" id="background">
+    <div id="App" class="wrapper">
+      <div id="InputForm">
+        <div id="Error-Notification">
+          <p>Not Valid</p>
+        </div>
+        <input id="Input" type="text" placeholder="City"/>
+      </div>
+      <!-- Use unsplash for random pictures of weather with search keys like weather-smoke -->
+      <!-- Example Request
+      curl https://api.unsplash.com/photos/random?client_id=6fec2d525e4745f4b653315d0b92f11917359b3cb5c5784235f82bc8234f4b63&query=weather -H "Accept-Version: v1"
+      -->
+      <div id="WeatherData" class="Hidden">
+        <p class="text-center" id="city">Murray</p>
+        <p class="text-center" id="main">Light Rain</p>
+        <p class="key-value"><span class="aggregate">Temperature </span><span class="data"><span id="temp">77.07</span>&deg;F</span></p>
+        <p class="key-value"><span class="aggregate">Temperature Minimum </span><span class="data"><span id="tempMin">77.07</span>&deg;F</span></p>
+        <p class="key-value"><span class="aggregate">Temperature Maximum </span><span class="data"><span id="tempMax">77.07</span>&deg;F</span></p>
+        <p class="key-value"><span class="aggregate">Wind Speed </span><span class="data"><span id="windSpeed">77.07</span> MPH</span></p>
+        <p class="key-value"><span class="aggregate">Wind Direction </span><span class="data" id="windDirectionParent"><span id="windDirection" direction="2">77.07</span></span></p>
+      </div>
+    </div>
+  </body>
+</html>
