@@ -53,6 +53,7 @@ function initWeatherData() {
     document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max);
     document.getElementById("windSpeed").innerHTML = Math.round(data.wind.speed);
     document.getElementById("city").innerHTML = data.name;
+    document.getElementById("humd").innerHTML = data.main.humidity;
     if(data.weather[0].main == "Smoke"){
       document.getElementById("main").innerHTML = "Vape";
     }else{
