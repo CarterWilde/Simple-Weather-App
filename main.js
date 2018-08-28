@@ -53,22 +53,27 @@ function initWeatherData() {
     document.getElementById("tempMax").innerHTML = Math.round(data.main.temp_max);
     document.getElementById("windSpeed").innerHTML = Math.round(data.wind.speed);
     document.getElementById("city").innerHTML = data.name;
-    document.getElementById("humd").innerHTML = data.main.humidity;
-    if(data.weather[0].main == "Smoke"){
-      document.getElementById("main").innerHTML = "Vape";
-    }else{
-      document.getElementById("main").innerHTML = data.weather[0].main;
+    if(data.main.humidity != null || data.main.humidity != undefined){
+      document.getElementById("humd").innerHTML = data.main.humidity;
     }
+    else if(data.main.humidity == null || data.main.humidity == undefined){
+      document.getElementById("humd").parentElement.remove();
+    }
+    document.getElementById("main").innerHTML = data.weather[0].main;
     document.getElementById("InputForm").remove();
     let windDegree = data.wind.deg;
     let directionElement = document.getElementById("windDirection");
-    directionElement.innerHTML = CalcWindDirection(windDegree);
-    document.getElementById("windDirectionParent").addEventListener("mouseover", (event) => {
-      directionElement.innerHTML = Math.round(windDegree) + "&deg;";
-    });
-    document.getElementById("windDirectionParent").addEventListener("mouseout", (event) => {
+    if(windDegree != null || windDegree != undefined){
       directionElement.innerHTML = CalcWindDirection(windDegree);
-    });
+      document.getElementById("windDirectionParent").addEventListener("mouseover", (event) => {
+        directionElement.innerHTML = Math.round(windDegree) + "&deg;";
+      });
+      document.getElementById("windDirectionParent").addEventListener("mouseout", (event) => {
+        directionElement.innerHTML = CalcWindDirection(windDegree);
+      });
+    }else{
+      directionElement.parentElement.parentNode.remove();
+    }
     document.getElementById("WeatherData").classList.remove("Hidden");
   })
   .catch((error) => {
