@@ -67,7 +67,7 @@ body{
 }
 .key-value{
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1.25fr;
   margin: 1% 0%;
 }
 .aggregate{
